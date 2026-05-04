@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan - SMK 02 ISLAM 45 AMBULU</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ================= VARIABLES ================= */
+        :root {
+            --navy: #0a192f;
+            --gold: #d4af37;
+            --gold-hover: #b5952f;
+            --white: #ffffff;
+            --bg-light: #f4f7f6;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --success: #e6f4ea;
+            --success-text: #1e8e3e;
+            --danger: #fce8e6;
+            --danger-text: #d93025;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        /* ================= GLOBAL STYLES ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ================= SPA ANIMATION ================= */
+        .page {
+            display: none;
+            opacity: 0;
+            flex: 1;
+            padding: 40px 20px;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeInSlideUp 0.6s forwards;
+        }
+
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        /* ================= CARDS & CONTAINERS ================= */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--navy);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ================= GRIDS ================= */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .info-box h4 {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* ================= COUNTDOWN TIMER ================= */
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .timer-box {
+            background: var(--navy);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .timer-box span {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .timer-box small {
+            font-size: 12px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* ================= BUTTONS ================= */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-navy {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-navy:hover {
+            background-color: #061020;
+            transform: translateY(-2px);
+        }
+
+        .btn-disabled {
+            background-color: #cccccc !important;
+            color: #666666 !important;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .center-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* ================= FORM INPUT ================= */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition);
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        /* ================= RESULT STYLES ================= */
+        .result-box {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .result-lulus {
+            background-color: var(--success);
+            border: 2px solid var(--success-text);
+            color: var(--success-text);
+        }
+
+        .result-tidaklulus {
+            background-color: var(--danger);
+            border: 2px solid var(--danger-text);
+            color: var(--danger-text);
+        }
+
+        .result-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .result-status {
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 15px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            font-size: 14px;
+        }
+
+        /* ================= SAMBUTAN STYLES ================= */
+        .sambutan-text {
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .ttd-container {
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        .ttd-img {
+            max-width: 150px;
+            margin: 10px 0;
+        }
+
+        /* ================= PRINT MEDIA QUERY ================= */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            .no-print {
+                display: none !important;
+            }
+            header, footer {
+                display: none !important;
+            }
+            .page {
+                padding: 0;
+            }
+            .card {
+                box-shadow: none;
+                border: 2px solid black;
+                border-radius: 0;
+            }
+            .result-box {
+                border: 2px solid black !important;
+                background-color: white !important;
+                color: black !important;
+            }
+            /* Add formal Kop Surat for SKL */
+            .print-kop {
+                display: block !important;
+                text-align: center;
+                border-bottom: 3px solid black;
+                padding-bottom: 20px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .print-kop {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="no-print">
+        <div class="header-content">
+            <div class="logo-container">
+                <!-- URL Google Drive dikonversi ke format direct image -->
+                <img src="https://drive.google.com/uc?export=view&id=1KjXArYfAI-GPnLwYzcV96nuopIYPh0ea" onerror="this.src='https://placehold.co/100x100?text=Logo+SMK'" alt="Logo Sekolah">
+            </div>
+            <h1>PENGUMUMAN KELULUSAN SEKOLAH</h1>
+            <h2>SMK 02 ISLAM 45 AMBULU</h2>
+            <p style="color: var(--gold);">Tahun Ajaran 2025/2026</p>
+        </div>
+    </header>
+
+    <!-- HALAMAN 1: BERANDA -->
+    <main id="page-home" class="page active">
+        <div class="container">
+            
+            <!-- Statistik & Info Cepat -->
+            <div class="grid-3 mb-30" style="margin-bottom: 30px;">
+                <div class="info-box">
+                    <h4>📅 Tanggal Pengumuman</h4>
+                    <p>04 Mei 2026, 10:00 WIB</p>
+                </div>
+                <div class="info-box">
+                    <h4>🎓 Total Peserta</h4>
+                    <p>150 Siswa</p>
+                </div>
+                <div class="info-box">
+                    <h4>🏆 Akreditasi</h4>
+                    <p>A (Unggul)</p>
+                </div>
+            </div>
+
+            <!-- Program Keahlian -->
+            <div class="card">
+                <div class="card-title">💼 Program Keahlian</div>
+                <div class="info-box" style="background-color: var(--navy); color: white; border-left: 4px solid var(--gold);">
+                    <h3 style="color: var(--gold); margin-bottom: 10px;">📊 Akuntansi dan Keuangan Lembaga (AKL)</h3>
+                    <p style="color: white; font-weight: normal; font-size: 14px;">Membekali siswa dengan keterampilan, pengetahuan, dan sikap agar kompeten dalam mengelola transaksi keuangan, menyusun laporan keuangan, dan mengoperasikan aplikasi akuntansi komputer.</p>
+                </div>
+            </div>
+
+            <!-- Timer & Akses -->
+            <div class="card" style="text-align: center;">
+                <div class="card-title" style="justify-content: center;">Waktu Menuju Pengumuman</div>
+                <p>Pengumuman akan dibuka secara resmi dalam waktu:</p>
+                
+                <div class="timer-container" id="timer-container">
+                    <div class="timer-box">
+                        <span id="days">00</span>
+                        <small>Hari</small>
+                    </div>
+                    <div class="timer-box">
+                        <span id="hours">00</span>
+                        <small>Jam</small>
+                    </div>
+                    <div class="timer-box">
+                        <span id="minutes">00</span>
+                        <small>Menit</small>
+                    </div>
+                    <div class="timer-box">
+                        <span id="seconds">00</span>
+                        <small>Detik</small>
+                    </div>
+                </div>
+
+                <div class="center-btn">
+                    <button id="btn-masuk" class="btn btn-navy btn-disabled" disabled onclick="navigasi('page-sambutan')">
+                        PENGUMUMAN BELUM DIBUKA
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- HALAMAN 2: SAMBUTAN -->
+    <main id="page-sambutan" class="page">
+        <div class="container">
+            <div class="card">
+                <div class="card-title">Sambutan Kepala Sekolah</div>
+                
+                <div class="sambutan-text">
+                    <p><em>Assalamu'alaikum Warahmatullahi Wabarakatuh,</em></p>
+                    <br>
+                    <p>Puji syukur kehadirat Allah SWT atas segala limpahan rahmat dan karunia-Nya. Sholawat serta salam senantiasa tercurahkan kepada junjungan kita Nabi Agung Muhammad SAW.</p>
+                    <br>
+                    <p>Anak-anakku siswa-siswi SMK 02 ISLAM 45 AMBULU kelas XII Tahun Ajaran 2025/2026 yang Bapak cintai dan banggakan. Hari ini adalah momen yang sangat penting bagi kalian semua, hari di mana hasil jerih payah, doa, dan dedikasi kalian selama tiga tahun menimba ilmu di sekolah ini akan diumumkan.</p>
+                    <br>
+                    <p>Bagi yang dinyatakan LULUS, Bapak ucapkan selamat. Jadikan ini sebagai langkah awal untuk meraih cita-cita yang lebih tinggi, baik di dunia kerja maupun perguruan tinggi. Bagi yang belum berhasil, jangan berkecil hati. Kegagalan bukanlah akhir segalanya, melainkan keberhasilan yang tertunda.</p>
+                    <br>
+                    <p>Tetap jaga nama baik almamater SMK 02 ISLAM 45 AMBULU di manapun kalian berada. Sukses selalu untuk kalian semua.</p>
+                    <br>
+                    <p><em>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</em></p>
+                </div>
+
+                <div class="ttd-container">
+                    <p>Ambulu, 04 Mei 2026</p>
+                    <p>Kepala SMK 02 ISLAM 45 AMBULU</p>
+                    <!-- URL Google Drive TTD -->
+                    <img src="https://drive.google.com/uc?export=view&id=1ckN5gqgs_U9cbGKRD0F4zwAfM45h8X0F" alt="Tanda Tangan" class="ttd-img" onerror="this.src='https://placehold.co/150x80?text=TTD'">
+                    <p style="font-weight: bold; text-decoration: underline;">Drs. Basuni Abubakar, M.Pd.I</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-navy" onclick="navigasi('page-home')">Kembali ke Beranda</button>
+                    <button class="btn btn-gold" onclick="navigasi('page-cek')">Lanjut Cek Kelulusan</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- HALAMAN 3: FORM CEK KELULUSAN -->
+    <main id="page-cek" class="page">
+        <div class="container">
+            <div class="card">
+                <div class="card-title" style="justify-content: center;">Cek Kelulusan Anda</div>
+                <p style="text-align: center; margin-bottom: 20px;">Silakan masukkan Nomor Induk Siswa Nasional (NISN) Anda pada kolom di bawah ini.</p>
+                
+                <div class="input-group">
+                    <input type="text" id="nisn-input" placeholder="Masukkan NISN..." autocomplete="off">
+                    <button class="btn btn-gold" onclick="cekKelulusan()" style="max-width: 100%;">CEK KELULUSAN</button>
+                    <p id="error-msg" style="color: var(--danger-text); text-align: center; display: none; font-weight: 600;">Data tidak ditemukan. Periksa kembali NISN Anda.</p>
+                </div>
+                
+                <div class="center-btn">
+                    <button class="btn btn-navy" style="margin-top: 20px; background: transparent; color: var(--navy); border: 2px solid var(--navy);" onclick="navigasi('page-sambutan')">Kembali</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- HALAMAN 4: HASIL (SKL) -->
+    <main id="page-hasil" class="page">
+        <div class="container">
+            <div class="card" id="print-area">
+                
+                <!-- Kop Surat Khusus Print -->
+                <div class="print-kop">
+                    <h2 style="font-size: 24px;">SURAT KETERANGAN LULUS</h2>
+                    <h3 style="font-size: 20px;">SMK 02 ISLAM 45 AMBULU</h3>
+                    <p>Tahun Ajaran 2025/2026</p>
+                </div>
+
+                <div class="card-title no-print" style="justify-content: center;">Hasil Pengumuman</div>
+                
+                <div id="hasil-container">
+                    <!-- Data Hasil Akan Diisi oleh Javascript -->
+                </div>
+
+                <div class="action-buttons no-print" id="btn-action-container">
+                    <!-- Tombol Action Akan Diisi oleh Javascript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="no-print">
+        <p>&copy; <span id="currentYear"></span> SMK 02 ISLAM 45 AMBULU. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // 1. SETTING FOOTER TAHUN OTOMATIS
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 2. DATA CSV (Silakan Copy-Paste dari Excel ke sini)
+        // Format Wajib: Nama,NISN,Jurusan,Status
+        const dataCSV = `Nama,NISN,Jurusan,Status
+Ahmad Budi,12345678,AKUNTANSI DAN KEUANGAN LEMBAGA,LULUS
+Siti Aisyah,87654321,AKUNTANSI DAN KEUANGAN LEMBAGA,LULUS
+Budi Santoso,11223344,AKUNTANSI DAN KEUANGAN LEMBAGA,TIDAK LULUS
+Dewi Lestari,55667788,AKUNTANSI DAN KEUANGAN LEMBAGA,LULUS`;
+
+        // 3. PARSING CSV KE ARRAY OF OBJECTS
+        function parseCSV(csv) {
+            const lines = csv.trim().split('\n');
+            const result = [];
+            const headers = lines[0].split(',');
+            
+            for(let i = 1; i < lines.length; i++) {
+                const obj = {};
+                const currentLine = lines[i].split(',');
+                
+                for(let j = 0; j < headers.length; j++) {
+                    // Membersihkan spasi berlebih
+                    obj[headers[j].trim()] = currentLine[j] ? currentLine[j].trim() : ''; 
+                }
+                result.push(obj);
+            }
+            return result;
+        }
+
+        const dataSiswa = parseCSV(dataCSV);
+
+        // 4. NAVIGASI SPA (Single Page Application)
+        function navigasi(pageId) {
+            // Sembunyikan semua halaman
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Tampilkan halaman yang dituju
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Scroll ke atas halaman
+            window.scrollTo(0, 0);
+
+            // Bersihkan input dan error jika kembali ke form cek
+            if(pageId === 'page-cek') {
+                document.getElementById('nisn-input').value = '';
+                document.getElementById('error-msg').style.display = 'none';
+            }
+        }
+
+        // 5. COUNTDOWN TIMER LOGIC
+        // Format Tanggal: "May 04, 2026 10:00:00"
+        const countDownDate = new Date("May 04, 2026 10:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Jika waktu sudah habis
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer-container").style.display = "none";
+                
+                const btnMasuk = document.getElementById("btn-masuk");
+                btnMasuk.disabled = false;
+                btnMasuk.classList.remove("btn-disabled");
+                btnMasuk.innerText = "MASUK KE HALAMAN PENGUMUMAN";
+                
+                document.querySelector('#page-home p').innerHTML = "<b>Pengumuman telah resmi dibuka!</b> Silakan masuk ke halaman selanjutnya.";
+            } else {
+                // Kalkulasi hari, jam, menit, detik
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update DOM
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            }
+        }, 1000);
+
+        // 6. LOGIKA CEK KELULUSAN
+        function cekKelulusan() {
+            const inputNISN = document.getElementById('nisn-input').value.trim();
+            const errorMsg = document.getElementById('error-msg');
+            
+            if(inputNISN === '') {
+                errorMsg.innerText = "Mohon masukkan NISN terlebih dahulu.";
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Cari data di Array
+            const siswa = dataSiswa.find(s => s.NISN === inputNISN);
+
+            if(siswa) {
+                errorMsg.style.display = 'none';
+                tampilkanHasil(siswa);
+            } else {
+                errorMsg.innerText = "Data tidak ditemukan. Periksa kembali NISN Anda.";
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        // Fitur Submit dengan tombol Enter
+        document.getElementById("nisn-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                cekKelulusan();
+            }
+        });
+
+        // 7. RENDER HASIL
+        function tampilkanHasil(siswa) {
+            const container = document.getElementById('hasil-container');
+            const btnContainer = document.getElementById('btn-action-container');
+            
+            let resultHTML = '';
+            let btnHTML = '';
+
+            const isLulus = siswa.Status.toUpperCase() === 'LULUS';
+
+            resultHTML = `
+                <table style="width:100%; text-align:left; margin-bottom: 20px; font-size: 16px;">
+                    <tr>
+                        <td style="width: 150px; padding: 5px 0;"><strong>Nama Lengkap</strong></td>
+                        <td>: ${siswa.Nama}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px 0;"><strong>NISN</strong></td>
+                        <td>: ${siswa.NISN}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px 0;"><strong>Program Keahlian</strong></td>
+                        <td>: ${siswa.Jurusan}</td>
+                    </tr>
+                </table>
+                <p style="margin-top:20px;">Berdasarkan hasil Rapat Pleno Dewan Guru SMK 02 ISLAM 45 AMBULU, siswa tersebut dinyatakan:</p>
+                <div class="result-box ${isLulus ? 'result-lulus' : 'result-tidaklulus'}">
+                    <div class="result-status">${siswa.Status}</div>
+                </div>
+            `;
+
+            if(isLulus) {
+                resultHTML += `<p style="margin-top: 20px; font-weight: 500;">Selamat! Silakan cetak SKL (Surat Keterangan Lulus) ini atau ambil dokumen fisik di tata usaha sekolah sesuai jadwal yang ditentukan.</p>`;
+                
+                btnHTML = `
+                    <button class="btn btn-navy" onclick="window.print()">Cetak SKL (PDF)</button>
+                    <button class="btn btn-gold" onclick="navigasi('page-cek')">Cek Siswa Lain</button>
+                `;
+            } else {
+                resultHTML += `<p style="margin-top: 20px; font-weight: 500;">Tetap semangat dan jangan menyerah. Kegagalan adalah keberhasilan yang tertunda.</p>`;
+                
+                btnHTML = `
+                    <button class="btn btn-navy" onclick="navigasi('page-cek')">Cek Siswa Lain</button>
+                `;
+            }
+
+            container.innerHTML = resultHTML;
+            btnContainer.innerHTML = btnHTML;
+            
+            // Pindah ke halaman hasil
+            navigasi('page-hasil');
+        }
+    </script>
+</body>
+</html>
