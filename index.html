@@ -378,7 +378,6 @@
     <header class="no-print">
         <div class="header-content">
             <div class="logo-container">
-                <!-- Memanggil file gambar lokal yang diupload ke GitHub -->
                 <img src="logo.png" onerror="this.src='https://placehold.co/100x100?text=Logo+SMK'" alt="Logo Sekolah">
             </div>
             <h1>PENGUMUMAN KELULUSAN SEKOLAH</h1>
@@ -395,11 +394,11 @@
             <div class="grid-3 mb-30" style="margin-bottom: 30px;">
                 <div class="info-box">
                     <h4>📅 Tanggal Pengumuman</h4>
-                    <p>04 Mei 2026, 09:00 WIB</p>
+                    <p>04 Mei 2026, 10:00 WIB</p>
                 </div>
                 <div class="info-box">
                     <h4>🎓 Total Peserta</h4>
-                    <p>80 Siswa</p>
+                    <p>150 Siswa</p>
                 </div>
                 <div class="info-box">
                     <h4>🏆 Akreditasi</h4>
@@ -473,7 +472,6 @@
                 <div class="ttd-container">
                     <p>Ambulu, 04 Mei 2026</p>
                     <p>Kepala SMK 02 ISLAM 45 AMBULU</p>
-                    <!-- Memanggil file gambar lokal yang diupload ke GitHub -->
                     <img src="ttd.png" alt="Tanda Tangan" class="ttd-img" onerror="this.src='https://placehold.co/150x80?text=TTD'">
                     <p style="font-weight: bold; text-decoration: underline;">Drs. Basuni Abubakar, M.Pd.I</p>
                 </div>
@@ -541,9 +539,9 @@
         // 1. SETTING FOOTER TAHUN OTOMATIS
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // 2. DATA CSV (Silakan Copy-Paste dari Excel ke sini)
-        // Format Wajib: NAMA;NISN;JURUSAN;STATUS
+        // 2. DATA CSV (Bisa copy-paste langsung dari Excel)
         const dataCSV = `NAMA;NISN;JURUSAN;STATUS
+NAMA;NISN;JURUSAN;STATUS
 Achmad Denis Rohmatulloh;0089236219;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Adi Rama Nurhuda;0066280481;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Ahmad Danang Saputra;0081797360;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
@@ -555,6 +553,53 @@ Alfi Mustika Karimah;0075725458;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Aliya Suci Nurmaisyah;0071124760;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Amelia Setya Agustin;0076077622;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Andryan Adi Putra;0076954521;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Anis Nafida Dini Yati;0077682402;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Anisa Anggraini;0083592540;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Asyraful Anam Safiq;0073894203;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Aura Cinta Apriliana;0083964145;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Bambang Prastyo;0074000206;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Catrina Mega Aulia Putri;0086510079;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Dian Putri Rahayu;0074740193;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Edi Sumarmo;0075859355;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Elga Liyan Pramana ;0081402446;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Fike Nur Rodiyah;0073334143;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Galang Fernando;0077619166;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Hamdoni;0074089635;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Heru Prastiyo;0072091093;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Intan Ulia Yusantika;0077007468;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Kafka Nafisa Adelia;0071920051;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Kana Azaria Bagarib;0086483920;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Khoirul Umam;0078709602;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Kinda Mar'atul Jannah;0073508158;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Liana Dewi Khofifah;0086880170;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Mita Yulianta Apriliana;0089851122;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Mitha Indah Erlina;0077194744;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Moch Gio Awalludin;0079503492;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Moch. Nizar Zulmi Zulkarnain;0084468904;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Moh. Abdillah Kurnia;0071804736;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Moh Agung Prasetyo;0076123340;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Moh. Wildan Surya Yahya;0075105263;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Arifin;0075373265;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhamad Farel Wildan Revardo;0079272089;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhamad Nur Kholis;0075269172;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhamad Rasya Galang Saputra;0075502963;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Galuh Anggoro;0085784875;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Kavin Adka;0077783954;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Lucky Iqbal Alamsyah;0071593753;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Nur Wahyudi;0085409991;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Ridho Pratama;0078524355;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Rizkiawan;0077802887;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Zaqi Mushthofa;3073446436;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Mukhammad Musthofa;0088084257;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nafisa Maulidia Hariadi Putri;0085981931;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Naila Husna;0077055588;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nailur Rohmania;0071416993;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nanda Nur Holifatul Miftahul Runu Fiana;0077309297;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nesa Shella Dwi Hindarsih;0076181135;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Novita Sari;3085392231;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nur Alya Wijayanti;0074952359;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nur Aviva Tur Rohmah;0079578377;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Nur Imam Risky Wahyu Try;0071423229;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Oktavia Vernanda Fitria;0085917427;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Rani Yuliati;0076207258;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Rena Suci Ramadani;0078754777;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
@@ -565,29 +610,52 @@ Rindi Fatmawati;0085137240;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Safaul Afifah;3061891231;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Sandra Dewi;0095917521;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
 Saskia Febrianti;0085759981;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
+Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Siti Kharirotuz Zakiya;3072469986;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Tari Tahmidatul Nisah;0082628539;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Teguh Abi Utama;0082476299;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Ummul Azzizah;0072017954;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Verlita Vallentina Pratiwi;0088342201;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Yuli Ayunda;0072248791;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Yulianti Tri Safitri;0078773602;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Yuliatin ;0096987795;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Ilfa Amanatuz Zaidah;0065323302;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Muhammad Fathir Febryanto;0085033421;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
+Kesya Putri Rahayu;0086975343;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
 
-        // 3. PARSING CSV KE ARRAY OF OBJECTS
+        // 3. PARSING CSV KE ARRAY OF OBJECTS (DIPERBARUI: AUTO-DETECT DELIMITER)
         function parseCSV(csv) {
             const lines = csv.trim().split('\n');
             const result = [];
             
-            // Excel format Indonesia memisahkan data dengan titik koma (;)
-            const headers = lines[0].split(';'); 
+            if (lines.length === 0) return result;
+
+            // Auto-detect pemisah kolom: koma, titik koma, atau tab (berguna saat copy-paste dari Excel)
+            let delimiter = ',';
+            if (lines[0].includes(';')) delimiter = ';';
+            else if (lines[0].includes('\t')) delimiter = '\t';
+            
+            const headers = lines[0].split(delimiter); 
             
             for(let i = 1; i < lines.length; i++) {
+                // Lewati baris kosong
+                if(!lines[i] || lines[i].trim() === '') continue;
+
                 const obj = {};
-                const currentLine = lines[i].split(';'); // Gunakan titik koma (;)
+                const currentLine = lines[i].split(delimiter); 
                 
                 for(let j = 0; j < headers.length; j++) {
-                    let headerName = headers[j] ? headers[j].trim() : '';
+                    // Bersihkan nama header dari spasi dan karakter tak terlihat (termasuk \r)
+                    let headerName = headers[j] ? headers[j].trim().replace(/[\r\n]+/g, '').toUpperCase() : '';
                     
-                    // Samakan header dari Excel dengan variabel yang dibutuhkan
+                    // Standarisasi nama properti
                     if (headerName === 'NAMA') headerName = 'Nama';
-                    if (headerName === 'JURUSAN') headerName = 'Jurusan';
-                    if (headerName === 'STATUS') headerName = 'Status';
+                    else if (headerName === 'NISN') headerName = 'NISN';
+                    else if (headerName === 'JURUSAN') headerName = 'Jurusan';
+                    else if (headerName === 'STATUS') headerName = 'Status';
 
-                    obj[headerName] = currentLine[j] ? currentLine[j].trim() : ''; 
+                    // Simpan data dan bersihkan dari karakter aneh
+                    obj[headerName] = currentLine[j] ? currentLine[j].trim().replace(/[\r\n]+/g, '') : ''; 
                 }
                 result.push(obj);
             }
@@ -621,14 +689,12 @@ Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
         }
 
         // 5. COUNTDOWN TIMER LOGIC
-        // Format Tanggal: "May 04, 2026 10:00:00"
         const countDownDate = new Date("May 04, 2026 10:00:00").getTime();
 
         const x = setInterval(function() {
             const now = new Date().getTime();
             const distance = countDownDate - now;
 
-            // Jika waktu sudah habis
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("timer-container").style.display = "none";
@@ -640,13 +706,11 @@ Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
                 
                 document.querySelector('#page-home p').innerHTML = "<b>Pengumuman telah resmi dibuka!</b> Silakan masuk ke halaman selanjutnya.";
             } else {
-                // Kalkulasi hari, jam, menit, detik
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Update DOM
                 document.getElementById("days").innerText = days < 10 ? "0" + days : days;
                 document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
                 document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
@@ -656,6 +720,7 @@ Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
 
         // 6. LOGIKA CEK KELULUSAN
         function cekKelulusan() {
+            // Hapus spasi jika siswa tidak sengaja mem-paste beserta spasinya
             const inputNISN = document.getElementById('nisn-input').value.trim();
             const errorMsg = document.getElementById('error-msg');
             
@@ -665,7 +730,7 @@ Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
                 return;
             }
 
-            // Cari data di Array
+            // Cari data di Array berdasarkan NISN
             const siswa = dataSiswa.find(s => s.NISN === inputNISN);
 
             if(siswa) {
