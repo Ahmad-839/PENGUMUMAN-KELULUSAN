@@ -331,51 +331,12 @@
             max-width: 150px;
             margin: 10px 0;
         }
-
-        /* ================= PRINT MEDIA QUERY ================= */
-        @media print {
-            body {
-                background-color: white;
-                color: black;
-            }
-            .no-print {
-                display: none !important;
-            }
-            header, footer {
-                display: none !important;
-            }
-            .page {
-                padding: 0;
-            }
-            .card {
-                box-shadow: none;
-                border: 2px solid black;
-                border-radius: 0;
-            }
-            .result-box {
-                border: 2px solid black !important;
-                background-color: white !important;
-                color: black !important;
-            }
-            /* Add formal Kop Surat for SKL */
-            .print-kop {
-                display: block !important;
-                text-align: center;
-                border-bottom: 3px solid black;
-                padding-bottom: 20px;
-                margin-bottom: 30px;
-            }
-        }
-
-        .print-kop {
-            display: none;
-        }
     </style>
 </head>
 <body>
 
     <!-- HEADER -->
-    <header class="no-print">
+    <header>
         <div class="header-content">
             <div class="logo-container">
                 <!-- Memanggil Logo dari PostImage -->
@@ -506,25 +467,18 @@
         </div>
     </main>
 
-    <!-- HALAMAN 4: HASIL (SKL) -->
+    <!-- HALAMAN 4: HASIL PENGUMUMAN -->
     <main id="page-hasil" class="page">
         <div class="container">
-            <div class="card" id="print-area">
+            <div class="card">
                 
-                <!-- Kop Surat Khusus Print -->
-                <div class="print-kop">
-                    <h2 style="font-size: 24px;">SURAT KETERANGAN LULUS</h2>
-                    <h3 style="font-size: 20px;">SMK 02 ISLAM 45 AMBULU</h3>
-                    <p>Tahun Ajaran 2025/2026</p>
-                </div>
-
-                <div class="card-title no-print" style="justify-content: center;">Hasil Pengumuman</div>
+                <div class="card-title" style="justify-content: center;">Hasil Pengumuman</div>
                 
                 <div id="hasil-container">
                     <!-- Data Hasil Akan Diisi oleh Javascript -->
                 </div>
 
-                <div class="action-buttons no-print" id="btn-action-container">
+                <div class="action-buttons" id="btn-action-container">
                     <!-- Tombol Action Akan Diisi oleh Javascript -->
                 </div>
             </div>
@@ -532,7 +486,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="no-print">
+    <footer>
         <p>&copy; <span id="currentYear"></span> SMK 02 ISLAM 45 AMBULU. All Rights Reserved.</p>
     </footer>
 
@@ -543,87 +497,86 @@
 
         // 2. DATA CSV (Bisa copy-paste langsung dari Excel)
         const dataCSV = `NAMA;NISN;JURUSAN;STATUS
-NAMA;NISN;JURUSAN;STATUS
-Achmad Denis Rohmatulloh;0089236219;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Adi Rama Nurhuda;0066280481;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ahmad Danang Saputra;0081797360;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ahmad Devis Vergiawan;0084537458;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ahmad Nofan Tri Afandi;0073168361;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ahmad Ramadhani;0072957128;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ahmad Yoga Destian;0071365070;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Alfi Mustika Karimah;0075725458;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Aliya Suci Nurmaisyah;0071124760;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Amelia Setya Agustin;0076077622;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Andryan Adi Putra;0076954521;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Anis Nafida Dini Yati;0077682402;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Anisa Anggraini;0083592540;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Asyraful Anam Safiq;0073894203;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Aura Cinta Apriliana;0083964145;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Bambang Prastyo;0074000206;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Catrina Mega Aulia Putri;0086510079;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Dian Putri Rahayu;0074740193;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Edi Sumarmo;0075859355;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Elga Liyan Pramana ;0081402446;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Fike Nur Rodiyah;0073334143;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Galang Fernando;0077619166;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Hamdoni;0074089635;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Heru Prastiyo;0072091093;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Intan Ulia Yusantika;0077007468;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Kafka Nafisa Adelia;0071920051;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Kana Azaria Bagarib;0086483920;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Khoirul Umam;0078709602;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Kinda Mar'atul Jannah;0073508158;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Liana Dewi Khofifah;0086880170;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Mita Yulianta Apriliana;0089851122;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Mitha Indah Erlina;0077194744;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Moch Gio Awalludin;0079503492;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Moch. Nizar Zulmi Zulkarnain;0084468904;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Moh. Abdillah Kurnia;0071804736;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Moh Agung Prasetyo;0076123340;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Moh. Wildan Surya Yahya;0075105263;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Arifin;0075373265;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhamad Farel Wildan Revardo;0079272089;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhamad Nur Kholis;0075269172;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhamad Rasya Galang Saputra;0075502963;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Galuh Anggoro;0085784875;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Kavin Adka;0077783954;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Lucky Iqbal Alamsyah;0071593753;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Nur Wahyudi;0085409991;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Ridho Pratama;0078524355;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Rizkiawan;0077802887;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Zaqi Mushthofa;3073446436;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Mukhammad Musthofa;0088084257;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nafisa Maulidia Hariadi Putri;0085981931;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Naila Husna;0077055588;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nailur Rohmania;0071416993;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nanda Nur Holifatul Miftahul Runu Fiana;0077309297;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nesa Shella Dwi Hindarsih;0076181135;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Novita Sari;3085392231;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nur Alya Wijayanti;0074952359;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nur Aviva Tur Rohmah;0079578377;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Nur Imam Risky Wahyu Try;0071423229;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Oktavia Vernanda Fitria;0085917427;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Rani Yuliati;0076207258;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Rena Suci Ramadani;0078754777;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Reny Lindyasari;0074562187;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ridho Marcellino;0092951813;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Rima Dias Tuti;0075098535;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Rindi Fatmawati;0085137240;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Safaul Afifah;3061891231;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Sandra Dewi;0095917521;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Saskia Febrianti;0085759981;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Siti Kharirotuz Zakiya;3072469986;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Tari Tahmidatul Nisah;0082628539;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Teguh Abi Utama;0082476299;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ummul Azzizah;0072017954;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Verlita Vallentina Pratiwi;0088342201;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Yuli Ayunda;0072248791;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Yulianti Tri Safitri;0078773602;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Yuliatin ;0096987795;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Ilfa Amanatuz Zaidah;0065323302;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Muhammad Fathir Febryanto;0085033421;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS
-Kesya Putri Rahayu;0086975343;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
+Achmad Denis Rohmatulloh;0089236219;AKUNTANSI DAN KEUANGAN LEMBAGA
+Adi Rama Nurhuda;0066280481;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ahmad Danang Saputra;0081797360;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ahmad Devis Vergiawan;0084537458;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ahmad Nofan Tri Afandi;0073168361;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ahmad Ramadhani;0072957128;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ahmad Yoga Destian;0071365070;AKUNTANSI DAN KEUANGAN LEMBAGA
+Alfi Mustika Karimah;0075725458;AKUNTANSI DAN KEUANGAN LEMBAGA
+Aliya Suci Nurmaisyah;0071124760;AKUNTANSI DAN KEUANGAN LEMBAGA
+Amelia Setya Agustin;0076077622;AKUNTANSI DAN KEUANGAN LEMBAGA
+Andryan Adi Putra;0076954521;AKUNTANSI DAN KEUANGAN LEMBAGA
+Anis Nafida Dini Yati;0077682402;AKUNTANSI DAN KEUANGAN LEMBAGA
+Anisa Anggraini;0083592540;AKUNTANSI DAN KEUANGAN LEMBAGA
+Asyraful Anam Safiq;0073894203;AKUNTANSI DAN KEUANGAN LEMBAGA
+Aura Cinta Apriliana;0083964145;AKUNTANSI DAN KEUANGAN LEMBAGA
+Bambang Prastyo;0074000206;AKUNTANSI DAN KEUANGAN LEMBAGA
+Catrina Mega Aulia Putri;0086510079;AKUNTANSI DAN KEUANGAN LEMBAGA
+Dian Putri Rahayu;0074740193;AKUNTANSI DAN KEUANGAN LEMBAGA
+Edi Sumarmo;0075859355;AKUNTANSI DAN KEUANGAN LEMBAGA
+Elga Liyan Pramana ;0081402446;AKUNTANSI DAN KEUANGAN LEMBAGA
+Fike Nur Rodiyah;0073334143;AKUNTANSI DAN KEUANGAN LEMBAGA
+Galang Fernando;0077619166;AKUNTANSI DAN KEUANGAN LEMBAGA
+Hamdoni;0074089635;AKUNTANSI DAN KEUANGAN LEMBAGA
+Heru Prastiyo;0072091093;AKUNTANSI DAN KEUANGAN LEMBAGA
+Intan Ulia Yusantika;0077007468;AKUNTANSI DAN KEUANGAN LEMBAGA
+Kafka Nafisa Adelia;0071920051;AKUNTANSI DAN KEUANGAN LEMBAGA
+Kana Azaria Bagarib;0086483920;AKUNTANSI DAN KEUANGAN LEMBAGA
+Khoirul Umam;0078709602;AKUNTANSI DAN KEUANGAN LEMBAGA
+Kinda Mar'atul Jannah;0073508158;AKUNTANSI DAN KEUANGAN LEMBAGA
+Liana Dewi Khofifah;0086880170;AKUNTANSI DAN KEUANGAN LEMBAGA
+Mita Yulianta Apriliana;0089851122;AKUNTANSI DAN KEUANGAN LEMBAGA
+Mitha Indah Erlina;0077194744;AKUNTANSI DAN KEUANGAN LEMBAGA
+Moch Gio Awalludin;0079503492;AKUNTANSI DAN KEUANGAN LEMBAGA
+Moch. Nizar Zulmi Zulkarnain;0084468904;AKUNTANSI DAN KEUANGAN LEMBAGA
+Moh. Abdillah Kurnia;0071804736;AKUNTANSI DAN KEUANGAN LEMBAGA
+Moh Agung Prasetyo;0076123340;AKUNTANSI DAN KEUANGAN LEMBAGA
+Moh. Wildan Surya Yahya;0075105263;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Arifin;0075373265;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhamad Farel Wildan Revardo;0079272089;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhamad Nur Kholis;0075269172;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhamad Rasya Galang Saputra;0075502963;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Galuh Anggoro;0085784875;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Kavin Adka;0077783954;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Lucky Iqbal Alamsyah;0071593753;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Nur Wahyudi;0085409991;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Ridho Pratama;0078524355;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Rizkiawan;0077802887;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Zaqi Mushthofa;3073446436;AKUNTANSI DAN KEUANGAN LEMBAGA
+Mukhammad Musthofa;0088084257;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nafisa Maulidia Hariadi Putri;0085981931;AKUNTANSI DAN KEUANGAN LEMBAGA
+Naila Husna;0077055588;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nailur Rohmania;0071416993;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nanda Nur Holifatul Miftahul Runu Fiana;0077309297;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nesa Shella Dwi Hindarsih;0076181135;AKUNTANSI DAN KEUANGAN LEMBAGA
+Novita Sari;3085392231;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nur Alya Wijayanti;0074952359;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nur Aviva Tur Rohmah;0079578377;AKUNTANSI DAN KEUANGAN LEMBAGA
+Nur Imam Risky Wahyu Try;0071423229;AKUNTANSI DAN KEUANGAN LEMBAGA
+Oktavia Vernanda Fitria;0085917427;AKUNTANSI DAN KEUANGAN LEMBAGA
+Rani Yuliati;0076207258;AKUNTANSI DAN KEUANGAN LEMBAGA
+Rena Suci Ramadani;0078754777;AKUNTANSI DAN KEUANGAN LEMBAGA
+Reny Lindyasari;0074562187;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ridho Marcellino;0092951813;AKUNTANSI DAN KEUANGAN LEMBAGA
+Rima Dias Tuti;0075098535;AKUNTANSI DAN KEUANGAN LEMBAGA
+Rindi Fatmawati;0085137240;AKUNTANSI DAN KEUANGAN LEMBAGA
+Safaul Afifah;3061891231;AKUNTANSI DAN KEUANGAN LEMBAGA
+Sandra Dewi;0095917521;AKUNTANSI DAN KEUANGAN LEMBAGA
+Saskia Febrianti;0085759981;AKUNTANSI DAN KEUANGAN LEMBAGA
+Sherli Farhatin Qudsy;0083807793;AKUNTANSI DAN KEUANGAN LEMBAGA
+Siti Kharirotuz Zakiya;3072469986;AKUNTANSI DAN KEUANGAN LEMBAGA
+Tari Tahmidatul Nisah;0082628539;AKUNTANSI DAN KEUANGAN LEMBAGA
+Teguh Abi Utama;0082476299;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ummul Azzizah;0072017954;AKUNTANSI DAN KEUANGAN LEMBAGA
+Verlita Vallentina Pratiwi;0088342201;AKUNTANSI DAN KEUANGAN LEMBAGA
+Yuli Ayunda;0072248791;AKUNTANSI DAN KEUANGAN LEMBAGA
+Yulianti Tri Safitri;0078773602;AKUNTANSI DAN KEUANGAN LEMBAGA
+Yuliatin ;0096987795;AKUNTANSI DAN KEUANGAN LEMBAGA
+Ilfa Amanatuz Zaidah;0065323302;AKUNTANSI DAN KEUANGAN LEMBAGA
+Muhammad Fathir Febryanto;0085033421;AKUNTANSI DAN KEUANGAN LEMBAGA
+Kesya Putri Rahayu;0086975343;AKUNTANSI DAN KEUANGAN LEMBAGA`;
 
         // 3. PARSING CSV KE ARRAY OF OBJECTS (DIPERBARUI: AUTO-DETECT DELIMITER)
         function parseCSV(csv) {
@@ -784,10 +737,9 @@ Kesya Putri Rahayu;0086975343;AKUNTANSI DAN KEUANGAN LEMBAGA;LULUS`;
             `;
 
             if(isLulus) {
-                resultHTML += `<p style="margin-top: 20px; font-weight: 500;">Selamat! Silakan cetak SKL (Surat Keterangan Lulus) ini atau ambil dokumen fisik di tata usaha sekolah sesuai jadwal yang ditentukan.</p>`;
+                resultHTML += `<p style="margin-top: 20px; font-weight: 500;">Selamat! Silakan ambil dokumen fisik Surat Keterangan Lulus (SKL) di tata usaha sekolah sesuai jadwal yang ditentukan.</p>`;
                 
                 btnHTML = `
-                    <button class="btn btn-navy" onclick="window.print()">Cetak SKL (PDF)</button>
                     <button class="btn btn-gold" onclick="navigasi('page-cek')">Cek Siswa Lain</button>
                 `;
             } else {
